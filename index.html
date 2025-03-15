@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>年代別 盛り上がる曲リスト</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="notification" class="hidden"></div>
+    <h1>年代別 盛り上がる曲TOP10</h1>
+
+    <label for="decade">年代を選択：</label>
+    <select id="decade">
+        <option value="1970s">1970年代</option>
+        <option value="1980s">1980年代</option>
+        <option value="1990s">1990年代</option>
+        <option value="2000s">2000年代</option>
+        <option value="2010s">2010年代</option>
+        <option value="2020s">2020年代</option>
+    </select>
+
+    <ul id="ranking-list">
+        <!-- 選んだ年代の曲がここに表示される -->
+    </ul>
+
+    <h2>盛り上がる曲を追加してね！</h2>
+
+    <div class="input-container">
+        <!-- 年代ラベルとドロップダウンを横並び -->
+        <div class="decade-container">
+            <label for="new-decade">年代を選択：</label>
+            <select id="new-decade">
+                <option value="0">選択してください</option>
+                <option value="1970s">1970年代</option>
+                <option value="1980s">1980年代</option>
+                <option value="1990s">1990年代</option>
+                <option value="2000s">2000年代</option>
+                <option value="2010s">2010年代</option>
+                <option value="2020s">2020年代</option>
+            </select>
+        </div>
+    
+        <!-- 曲名入力 -->
+        <input type="text" id="new-song" placeholder="曲名を入力（20文字以内）" maxlength="20">
+        
+        <!-- 追加ボタン -->
+        <button id="add-song-btn">追加</button>
+    </div>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,197 @@
+/* 全体のスタイル */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    text-align: center;
+    padding: 20px;
+}
+
+/* 見出し */
+h1 {
+    font-size: 24px;
+    margin: 20px;
+    color: crimson;
+}
+
+/*小見出し */
+h2 {
+    font-size: 22px;
+    margin-top: 50px;
+    color:coral;
+}
+
+/* ドロップダウンメニュー */
+label {
+    font-size: 18px;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+select {
+    font-size: 16px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+/* 曲リスト */
+ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+li {
+    background: white;
+    padding: 10px;
+    width: 45%; /* 2列にする（余白考慮して45%） */
+    min-width: 150px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#song-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 10px; /* アイテム間の間隔 */
+    padding: 0;
+    margin-top: 20px;
+}
+
+/* 入力フォーム全体（縦並び） */
+.input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* 年代のラベルとドロップダウンを横並びにする */
+.decade-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* ラベルとドロップダウンの間隔 */
+}
+
+/* ドロップダウンのデザイン */
+#new-decade {
+    padding: 8px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+/* テキストボックスのデザイン */
+#new-song {
+    width: 80%;
+    max-width: 400px;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+/* フォーカス時（クリック時）のデザイン */
+#new-song:focus {
+    border-color: #007bff;
+}
+
+/* ボタンのデザイン */
+#add-song-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#add-song-btn:hover {
+    background-color: #0056b3;
+}
+
+/* ランキングリストの親コンテナ（2列にする） */
+#ranking-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(150px, 1fr)); /* 2列の幅を自動調整 */
+    gap: 10px; /* アイテム間の余白 */
+    padding: 0;
+    max-width: 600px;
+    margin: 20px auto; /* 中央揃え */
+    text-align: center; /* 中央寄せ */
+}
+
+/* 各ランキングアイテムのデザイン */
+#ranking-list li {
+    min-width: 280px;
+    background: white;
+    padding: 10px;
+    text-align: center;
+    list-style: none;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.song-item {
+    position: relative;
+    padding: 10px;
+    border: 1px solid #ccc; /* 枠線 */
+    border-radius: 5px;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 200px; /* 任意の幅 */
+}
+
+.count {
+    font-size: 12px;
+    color: gray;
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+}
+
+#notification {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    display: none;
+}
+
+#notification.show {
+    display: block;
+    animation: fadeOut 3s ease-in-out forwards;
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; }
+    70% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+
+/* スマホサイズ（600px以下）では1列にする */
+@media (max-width: 600px) {
+    li {
+        width: 100%;
+    }
+    #ranking-list {
+        grid-template-columns: 1fr; /* 1列表示 */
+    }
+}
